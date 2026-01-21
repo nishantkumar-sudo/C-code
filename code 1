@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+// Global variable
+int globalVar = 10;
+
+int main()
+{
+    // Local variable
+    int localVar = 20;
+
+    // Dynamically allocated variable
+    int *dynamicVar = new int(30);
+
+    // Printing addresses
+    cout << "Address of global variable  : " << &globalVar << endl;
+    cout << "Address of local variable   : " << &localVar << endl;
+    cout << "Address of dynamic variable : " << dynamicVar << endl;
+
+    // Free allocated memory
+    delete dynamicVar;
+
+    return 0;
+}
