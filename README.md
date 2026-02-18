@@ -97,3 +97,46 @@ int main() {
     cout << "Back in main()" << endl;
     return 0;
 }
+
+ques 3
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    double salary;
+
+public:
+    // Setter function with validation
+    void setSalary(double s) {
+        if (s >= 0) {
+            salary = s;
+        } else {
+            cout << "Error: Salary cannot be negative!" << endl;
+        }
+    }
+
+    // Getter function
+    double getSalary() {
+        return salary;
+    }
+};
+
+int main() {
+    Employee emp;
+
+    emp.setSalary(50000);     // Valid salary
+    cout << "Salary: " << emp.getSalary() << endl;
+
+    emp.setSalary(-1000);     // Invalid salary
+    cout << "Salary after invalid attempt: " 
+         << emp.getSalary() << endl;
+
+    return 0;
+}
+
+
+
+
+
