@@ -48,3 +48,52 @@ int main() {
 
     return 0;
 }
+
+ques 2 
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+private:
+    int accountNumber;
+    double balance;
+
+public:
+    // Constructor
+    BankAccount(int accNo, double bal) {
+        accountNumber = accNo;
+        balance = bal;
+        cout << "Account Created: " << accountNumber 
+             << " with Balance: " << balance << endl;
+    }
+
+    // Destructor
+    ~BankAccount() {
+        cout << "Account Destroyed: " << accountNumber << endl;
+    }
+
+    // Display function
+    void display() {
+        cout << "Account Number: " << accountNumber 
+             << ", Balance: " << balance << endl;
+    }
+};
+
+// Function to observe destructor behavior
+void createAccounts() {
+    BankAccount acc1(101, 5000.0);
+    BankAccount acc2(102, 10000.0);
+
+    cout << "Inside createAccounts() function" << endl;
+    acc1.display();
+    acc2.display();
+
+    // Destructor will be called automatically 
+    // when function ends (objects go out of scope)
+}
+
+int main() {
+    createAccounts();
+    cout << "Back in main()" << endl;
+    return 0;
+}
